@@ -8,15 +8,27 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
+    public const int InteractionDirection = 0;
+    public const int InteractionPosition = 1;
+    public const int InteractionSprite = 2;
+    public const int InteractionView = 3;
+    public const int QCLog = 4;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 5;
 
     public static readonly string[] componentNames = {
-
+        "InteractionDirection",
+        "InteractionPosition",
+        "InteractionSprite",
+        "InteractionView",
+        "QCLog"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(Interaction.DirectionComponent),
+        typeof(Interaction.PositionComponent),
+        typeof(Interaction.SpriteComponent),
+        typeof(Interaction.ViewComponent),
+        typeof(QC.LogComponent)
     };
 }
