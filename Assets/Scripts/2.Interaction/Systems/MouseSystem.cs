@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Interaction
 {
+    /// <summary>
+    /// 鼠标响应事件系统
+    /// </summary>
     public class MouseSystem : IInitializeSystem, IExecuteSystem
     {
         private InputEntity _inputEntity;
@@ -24,11 +27,11 @@ namespace Interaction
         {
             if (Input.GetMouseButtonDown(0))
             {
-                _inputEntity.ReplaceInteractionMouse(MouseButton.LEFT, MouseButtonEvent.DOWN);
+                _inputContext.ReplaceInteractionMouse(MouseButton.LEFT, MouseButtonEvent.DOWN);
             }
             if (Input.GetMouseButtonDown(1))
             {
-                _inputEntity.ReplaceInteractionMouse(MouseButton.RIGHT, MouseButtonEvent.DOWN);
+                _inputContext.ReplaceInteractionMouse(MouseButton.RIGHT, MouseButtonEvent.DOWN);
             }
         }
     }

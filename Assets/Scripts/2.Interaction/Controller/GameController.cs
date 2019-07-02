@@ -13,7 +13,7 @@ namespace Interaction
         void Start()
         {
             _contexts = Contexts.sharedInstance;
-            _systems = new Feature("System").Add(new GameFeature(_contexts));
+            _systems = new Feature("System").Add(new GameFeature(_contexts)).Add(new InputFeature(_contexts));
         }
 
         // Update is called once per frame

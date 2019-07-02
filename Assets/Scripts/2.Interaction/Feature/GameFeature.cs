@@ -10,6 +10,7 @@ namespace Interaction
         {
             Add(new AddViewSystem(contexts));
             Add(new SpriteRenderSystem(contexts));
+            Add(new PositionSystem(contexts));
         }
     }
 }

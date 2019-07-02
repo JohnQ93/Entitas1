@@ -19,12 +19,12 @@ namespace Interaction
         
         protected override bool Filter(GameEntity entity)
         {
-            return !entity.hasInteractionView;
+            return !entity.hasInteractionView && entity.hasInteractionSprite;
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            return context.CreateCollector(GameMatcher.InteractionView);
+            return context.CreateCollector(GameMatcher.InteractionSprite);
         }
 
         protected override void Execute(List<GameEntity> entities)
