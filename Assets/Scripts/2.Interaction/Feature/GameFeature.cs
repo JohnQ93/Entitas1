@@ -11,6 +11,9 @@ namespace Interaction
             Add(new AddViewSystem(contexts));
             Add(new SpriteRenderSystem(contexts));
             Add(new PositionSystem(contexts));
+            Add(new DirectionSystem(contexts));
+            Add(new MoveSystem(contexts));
+            Add(new ChangeRotationSystem(contexts));
         }
     }
 }

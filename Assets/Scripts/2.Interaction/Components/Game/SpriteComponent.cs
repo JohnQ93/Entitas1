@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Interaction
 {
     /// <summary>
-    /// Sprite组件
+    /// Sprite路径组件
     /// </summary>
     [Game]
     public class SpriteComponent : IComponent

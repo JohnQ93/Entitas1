@@ -10,6 +10,7 @@ namespace Interaction
         {
             Add(new MouseSystem(contexts));
             Add(new CreaterSystem(contexts));
+            Add(new StartMoveSystem(contexts));
         }
     }
 }

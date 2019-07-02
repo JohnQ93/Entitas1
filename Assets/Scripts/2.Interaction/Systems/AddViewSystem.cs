@@ -16,15 +16,15 @@ namespace Interaction
         {
             _parent = new GameObject("ViewParent").transform;
         }
-        
-        protected override bool Filter(GameEntity entity)
-        {
-            return !entity.hasInteractionView && entity.hasInteractionSprite;
-        }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
             return context.CreateCollector(GameMatcher.InteractionSprite);
+        }
+
+        protected override bool Filter(GameEntity entity)
+        {
+            return !entity.hasInteractionView && entity.hasInteractionSprite;
         }
 
         protected override void Execute(List<GameEntity> entities)
@@ -35,6 +35,7 @@ namespace Interaction
                 go.transform.SetParent(_parent);
                 go.Link(entity);
                 entity.AddInteractionView(go.transform);
+                entity.isInteractionMoveComplete = true;
             }
         }
     }

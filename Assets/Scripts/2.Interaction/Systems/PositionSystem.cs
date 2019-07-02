@@ -14,12 +14,9 @@ namespace Interaction
         {
         }
 
-        protected override void Execute(List<GameEntity> entities)
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            foreach (GameEntity entity in entities)
-            {
-                entity.interactionView.viewTrans.position = entity.interactionPosition.position;
-            }
+            return context.CreateCollector(GameMatcher.InteractionPosition);
         }
 
         protected override bool Filter(GameEntity entity)
@@ -27,9 +24,12 @@ namespace Interaction
             return entity.hasInteractionPosition && entity.hasInteractionView;
         }
 
-        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+        protected override void Execute(List<GameEntity> entities)
         {
-            return context.CreateCollector(GameMatcher.InteractionPosition);
+            foreach (GameEntity entity in entities)
+            {
+                entity.interactionView.viewTrans.position = entity.interactionPosition.position;
+            }
         }
     }
 }

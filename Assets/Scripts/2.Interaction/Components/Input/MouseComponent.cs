@@ -7,7 +7,7 @@ namespace Interaction
     /// <summary>
     /// 鼠标点击组件
     /// </summary>
-    [Input,Unique]
+    [Input, Unique]
     public class MouseComponent : IComponent
     {
         /// <summary>

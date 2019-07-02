@@ -16,15 +16,9 @@ namespace Interaction
             _gameContext = context.game;
         }
 
-        protected override void Execute(List<InputEntity> entities)
+        protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
         {
-            foreach (InputEntity entity in entities)
-            {
-                var gameEntity = _gameContext.CreateEntity();
-                gameEntity.AddInteractionSprite("pool");
-                var worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                gameEntity.AddInteractionPosition(worldPos);
-            }
+            return context.CreateCollector(InputMatcher.InteractionMouse);
         }
 
         protected override bool Filter(InputEntity entity)
@@ -34,9 +28,15 @@ namespace Interaction
                 && entity.interactionMouse.mouseEvent == MouseButtonEvent.DOWN;
         }
 
-        protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
+        protected override void Execute(List<InputEntity> entities)
         {
-            return context.CreateCollector(InputMatcher.InteractionMouse);
+            foreach (InputEntity entity in entities)
+            {
+                var gameEntity = _gameContext.CreateEntity();
+                gameEntity.AddInteractionSprite("Bullet");
+                var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+                gameEntity.AddInteractionPosition(worldPos);
+            }
         }
     }
 }
