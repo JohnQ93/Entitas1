@@ -14,9 +14,11 @@ public static class GameComponentsLookup {
     public const int InteractionPosition = 3;
     public const int InteractionSprite = 4;
     public const int InteractionView = 5;
-    public const int QCLog = 6;
+    public const int MultiReactiveDestroy = 6;
+    public const int MultiReactiveView = 7;
+    public const int QCLog = 8;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 9;
 
     public static readonly string[] componentNames = {
         "InteractionDirection",
@@ -25,6 +27,8 @@ public static class GameComponentsLookup {
         "InteractionPosition",
         "InteractionSprite",
         "InteractionView",
+        "MultiReactiveDestroy",
+        "MultiReactiveView",
         "QCLog"
     };
 
@@ -35,6 +39,8 @@ public static class GameComponentsLookup {
         typeof(Interaction.PositionComponent),
         typeof(Interaction.SpriteComponent),
         typeof(Interaction.ViewComponent),
+        typeof(MultiReactive.DestroyComponent),
+        typeof(MultiReactive.ViewComponent),
         typeof(QC.LogComponent)
     };
 }

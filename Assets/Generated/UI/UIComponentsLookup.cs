@@ -6,22 +6,19 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public static class InputComponentsLookup {
+public static class UIComponentsLookup {
 
-    public const int InteractionMouse = 0;
-    public const int MultiReactiveDestroy = 1;
-    public const int MultiReactiveView = 2;
+    public const int MultiReactiveDestroy = 0;
+    public const int MultiReactiveView = 1;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 2;
 
     public static readonly string[] componentNames = {
-        "InteractionMouse",
         "MultiReactiveDestroy",
         "MultiReactiveView"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Interaction.MouseComponent),
         typeof(MultiReactive.DestroyComponent),
         typeof(MultiReactive.ViewComponent)
     };
