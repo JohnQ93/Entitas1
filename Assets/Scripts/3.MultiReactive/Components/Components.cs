@@ -1,7 +1,6 @@
 ﻿using Entitas;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Entitas.CodeGeneration.Attributes;
 
 namespace MultiReactive
 {
@@ -20,5 +19,12 @@ namespace MultiReactive
     public class ViewComponent : IComponent
     {
         public Transform viewTrans;
+    }
+
+    [Game, Event(EventTarget.Any)]
+    public class NameComponent : IComponent
+    {
+        [EntityIndex]
+        public string name;
     }
 }
