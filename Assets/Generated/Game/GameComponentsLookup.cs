@@ -8,21 +8,27 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int InteractionDirection = 0;
-    public const int InteractionMoveComplete = 1;
-    public const int InteractionMove = 2;
-    public const int InteractionPosition = 3;
-    public const int InteractionSprite = 4;
-    public const int InteractionView = 5;
-    public const int MultiReactiveDestroy = 6;
-    public const int MultiReactiveName = 7;
-    public const int MultiReactiveView = 8;
-    public const int MultiReactiveAnyNameListener = 9;
-    public const int QCLog = 10;
+    public const int GameDestroy = 0;
+    public const int GameGameBoard = 1;
+    public const int GameGameBoardItem = 2;
+    public const int InteractionDirection = 3;
+    public const int InteractionMoveComplete = 4;
+    public const int InteractionMove = 5;
+    public const int InteractionPosition = 6;
+    public const int InteractionSprite = 7;
+    public const int InteractionView = 8;
+    public const int MultiReactiveDestroy = 9;
+    public const int MultiReactiveName = 10;
+    public const int MultiReactiveView = 11;
+    public const int MultiReactiveAnyNameListener = 12;
+    public const int QCLog = 13;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 14;
 
     public static readonly string[] componentNames = {
+        "GameDestroy",
+        "GameGameBoard",
+        "GameGameBoardItem",
         "InteractionDirection",
         "InteractionMoveComplete",
         "InteractionMove",
@@ -37,6 +43,9 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Game.DestroyComponent),
+        typeof(Game.GameBoardComponent),
+        typeof(Game.GameBoardItemComponent),
         typeof(Interaction.DirectionComponent),
         typeof(Interaction.MoveCompleteComponent),
         typeof(Interaction.MoveComponent),
