@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Entitas;
+using Game.Data;
 
 namespace Game
 {
@@ -39,20 +40,22 @@ namespace Game
         public void Initialize()
         {
             GameBoardComponent gameBoard = CreaterService.Instance.CreateGameBoard().gameGameBoard;
-
+            CustomVector2 tempIndex = new CustomVector2();
             for (int x = 0; x < gameBoard.columns; x++)
             {
                 for (int y = 0; y < gameBoard.rows; y++)
                 {
+                    tempIndex.x = x;
+                    tempIndex.y = y;
                     if (RandomBlocker())
                     {
                         //生成障碍块
-                        CreaterService.Instance.CreateBlocker();
+                        CreaterService.Instance.CreateBlocker(tempIndex);
                     }
                     else
                     {
                         //生成消消球
-                        CreaterService.Instance.CreateBall();
+                        CreaterService.Instance.CreateBall(tempIndex);
                     }
                 }
             }

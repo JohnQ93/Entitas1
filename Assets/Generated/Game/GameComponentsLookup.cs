@@ -11,24 +11,36 @@ public static class GameComponentsLookup {
     public const int GameDestroy = 0;
     public const int GameGameBoard = 1;
     public const int GameGameBoardItem = 2;
-    public const int InteractionDirection = 3;
-    public const int InteractionMoveComplete = 4;
-    public const int InteractionMove = 5;
-    public const int InteractionPosition = 6;
-    public const int InteractionSprite = 7;
-    public const int InteractionView = 8;
-    public const int MultiReactiveDestroy = 9;
-    public const int MultiReactiveName = 10;
-    public const int MultiReactiveView = 11;
-    public const int MultiReactiveAnyNameListener = 12;
-    public const int QCLog = 13;
+    public const int GameItemIndex = 3;
+    public const int GameLoadPrefab = 4;
+    public const int GameMovable = 5;
+    public const int GameAnyLoadPrefabListener = 6;
+    public const int GameDestroyListener = 7;
+    public const int GameItemIndexListener = 8;
+    public const int InteractionDirection = 9;
+    public const int InteractionMoveComplete = 10;
+    public const int InteractionMove = 11;
+    public const int InteractionPosition = 12;
+    public const int InteractionSprite = 13;
+    public const int InteractionView = 14;
+    public const int MultiReactiveDestroy = 15;
+    public const int MultiReactiveName = 16;
+    public const int MultiReactiveView = 17;
+    public const int MultiReactiveAnyNameListener = 18;
+    public const int QCLog = 19;
 
-    public const int TotalComponents = 14;
+    public const int TotalComponents = 20;
 
     public static readonly string[] componentNames = {
         "GameDestroy",
         "GameGameBoard",
         "GameGameBoardItem",
+        "GameItemIndex",
+        "GameLoadPrefab",
+        "GameMovable",
+        "GameAnyLoadPrefabListener",
+        "GameDestroyListener",
+        "GameItemIndexListener",
         "InteractionDirection",
         "InteractionMoveComplete",
         "InteractionMove",
@@ -46,6 +58,12 @@ public static class GameComponentsLookup {
         typeof(Game.DestroyComponent),
         typeof(Game.GameBoardComponent),
         typeof(Game.GameBoardItemComponent),
+        typeof(Game.ItemIndexComponent),
+        typeof(Game.LoadPrefabComponent),
+        typeof(Game.MovableComponent),
+        typeof(GameAnyLoadPrefabListenerComponent),
+        typeof(GameDestroyListenerComponent),
+        typeof(GameItemIndexListenerComponent),
         typeof(Interaction.DirectionComponent),
         typeof(Interaction.MoveCompleteComponent),
         typeof(Interaction.MoveComponent),

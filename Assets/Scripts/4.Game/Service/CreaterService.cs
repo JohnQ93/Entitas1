@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game.Data;
 
 namespace Game
 {
@@ -37,14 +38,33 @@ namespace Game
             return entity;
         }
 
-        public void CreateBall()
+        /// <summary>
+        /// 生成可移动元素
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public GameEntity CreateBall(CustomVector2 index)
         {
-
+            var entity = _contexts.game.CreateEntity();
+            entity.isGameGameBoardItem = true;
+            entity.isGameMovable = true;
+            entity.gameItemIndex.index = index;
+            entity.AddGameLoadPrefab(RandomPathService.RandomPath());
+            return entity;
         }
 
-        public void CreateBlocker()
+        /// <summary>
+        /// 生成障碍
+        /// </summary>
+        /// <param name="index"></param>
+        public GameEntity CreateBlocker(CustomVector2 index)
         {
-
+            var entity = _contexts.game.CreateEntity();
+            entity.isGameGameBoardItem = true;
+            entity.isGameMovable = false;
+            entity.gameItemIndex.index = index;
+            entity.AddGameLoadPrefab(ResPath.BlockerPath);
+            return entity;
         }
     }
 }

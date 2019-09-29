@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Entitas;
+using Game.Data;
+using Entitas.CodeGeneration.Attributes;
 
 namespace Game
 {
@@ -32,8 +34,36 @@ namespace Game
     /// <summary>
     /// 游戏元素消除组件
     /// </summary>
-    [Game]
+    [Game, Event(EventTarget.Self)]
     public class DestroyComponent : IComponent
+    {
+
+    }
+
+    /// <summary>
+    /// 游戏元素的坐标
+    /// </summary>
+    [Game,Event(EventTarget.Self)]
+    public class ItemIndexComponent : IComponent
+    {
+        [EntityIndex]
+        public CustomVector2 index;
+    }
+
+    /// <summary>
+    /// 加载预制体组件
+    /// </summary>
+    [Game, Event(EventTarget.Any)]
+    public class LoadPrefabComponent : IComponent
+    {
+        public string path;
+    }
+
+    /// <summary>
+    /// 元素是否可移动的标签
+    /// </summary>
+    [Game]
+    public class MovableComponent : IComponent
     {
 
     }
