@@ -48,7 +48,7 @@ namespace Game
             var entity = _contexts.game.CreateEntity();
             entity.isGameGameBoardItem = true;
             entity.isGameMovable = true;
-            entity.gameItemIndex.index = index;
+            entity.AddGameItemIndex(index);
             entity.AddGameLoadPrefab(RandomPathService.RandomPath());
             return entity;
         }
@@ -62,7 +62,7 @@ namespace Game
             var entity = _contexts.game.CreateEntity();
             entity.isGameGameBoardItem = true;
             entity.isGameMovable = false;
-            entity.gameItemIndex.index = index;
+            entity.AddGameItemIndex(index);
             entity.AddGameLoadPrefab(ResPath.BlockerPath);
             return entity;
         }

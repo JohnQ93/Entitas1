@@ -12,7 +12,7 @@ namespace Game
         private void Awake()
         {
             var contexts = Contexts.sharedInstance;
-            _systems = new GameFeature(contexts);
+            _systems = new GameFeature(contexts).Add(new GameEventSystems(contexts));
             new Services(contexts, transform);
         }
 

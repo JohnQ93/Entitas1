@@ -4,6 +4,7 @@ using UnityEngine;
 using Entitas;
 using Game.Data;
 using Entitas.CodeGeneration.Attributes;
+using EventType = Entitas.CodeGeneration.Attributes.EventType;
 
 namespace Game
 {
@@ -43,7 +44,7 @@ namespace Game
     /// <summary>
     /// 游戏元素的坐标
     /// </summary>
-    [Game,Event(EventTarget.Self)]
+    [Game,Event(EventTarget.Self, EventType.Added, 1)]
     public class ItemIndexComponent : IComponent
     {
         [EntityIndex]
